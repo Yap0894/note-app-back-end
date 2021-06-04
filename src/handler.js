@@ -56,10 +56,10 @@ const getNoteByIdHandler = (request, h) =>{
     };
   }
   const failResponse = h.response({
-    status: 'failed',
-    message: 'Catatan gagal ditemukan',
+    status: 'fail',
+    message: 'Catatan tidak ditemukan',
   });
-  failResponse.response(404);
+  failResponse.code(404);
   return failResponse;
 };
 const updateNoteByIdHanlder = (request, h) => {
